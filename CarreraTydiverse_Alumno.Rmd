@@ -170,6 +170,14 @@ necesario**
 4.  Elige únicamente las variables `ip_id, package, country`
 
 ```{r}
+# Para este y los ejercicios siguientes, necesitaremos el uso de la librería
+# dplyr, por lo que la cargamos
+library(dplyr)
+
+# Seleccionamos únicamente las variables ip_id, package y country mediante una
+# tubería. Para escogerlas usamos la función select()
+cran <- cran %>% 
+  select(ip_id, package, country)
 
 ```
 
