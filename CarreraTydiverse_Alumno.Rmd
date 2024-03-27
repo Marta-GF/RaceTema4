@@ -348,8 +348,12 @@ head(cran3)
     tamaño de la descarga expresado en Mbytes ($1Mbyte=2^{20}$ bytes).
 
 ```{r}
+# Creamos la nueva variable size_mb con el tamaño expresado en Mbytes, es
+# decir, dividiendo size entre 2^20
+cran$size_mb <- cran$size/(2**20)
 
-
+#La mostramos
+head(cran$size_mb)
 ```
 
 16. Sabiendo que 1Gb son $2^{10}$ Mbytes, crea una nueva variable en
