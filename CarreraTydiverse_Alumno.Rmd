@@ -145,7 +145,6 @@ cran <- as_tibble(mydf)
 
 # Borramos el data frame original usando la función rm()
 rm(mydf)
-
 ```
 
 3.  Una ventaja de trasformar en tibble es la visualización. Escribe
@@ -159,7 +158,6 @@ cran
 
 # Observamos 'cran' utilizando la función glimpse
 glimpse(cran)
-
 ```
 
 # dplyr
@@ -181,7 +179,6 @@ cranej4 <- cran %>%
 
 # Mostramos el resultado
 head(cranej4)
-
 ```
 
 5.  Elige todas las variables entre `r_arch y country`
@@ -194,7 +191,6 @@ cranej5 <- cran %>%
 
 # Mostramos el resultado
 head(cranej5)
-
 ```
 
 5.  Puedes usar el signo (-) para no coger una columna determinada.
@@ -209,7 +205,6 @@ cranejj5 <- cran %>%
 
 # Mostramos el resultado
 head(cranejj5)
-
 ```
 
 6.  Elige aquellos registros en los que se haya descargado el paquete
@@ -224,7 +219,6 @@ cran_3_5_1 <- cran %>%
 
 # Mostramos los resultados
 cran_3_5_1 # (no hace falta head porque solo hay un registro)
-
 ```
 
 6.  Elige aquellas descargas realizadas desde España (ES), con versiones
@@ -238,7 +232,6 @@ cran_3_4_0 <- cran %>%
 
 # Mostramos los resultados
 head(cran_3_4_0)
-
 ```
 
 7.  Elige aquellas descargas realizadas desde España (ES), o Portugal
@@ -251,7 +244,6 @@ cran_ES_PT <- cran %>%
 
 # Mostramos los resultados
 head(cran_ES_PT)
-
 ```
 
 8.  Elige aquellas descargas cuyo tamaño supera los 100500 bytes desde
@@ -319,13 +311,19 @@ head(cran2)
 12. Ordena `cran2` según los valores de `package e ip_id`.
 
 ```{r}
+# Ordenamos cran2 según los valores de package e ip_id con la función arrange
+cran2 <- cran2 %>%
+  arrange(package, ip_id)
 
+# Mostramos el resultado
+head(cran2)
 ```
 
 13. Ordena `cran2` según los valores de `country` (ascendente),
     `r_version` (desdencente) e `ip_id`(ascendente).
 
 ```{r}
+
 ```
 
 14. Selecciona el subconjunto formado por las variables, del `cran`,
