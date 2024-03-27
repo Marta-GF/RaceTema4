@@ -300,14 +300,20 @@ head(cran2)
 cran2 <- cran2 %>%
   arrange(ip_id) # Es ascendente por defecto
 
-# Verificar los primeros registros resultantes
+# Mostramos los resultados
 head(cran2)
 ```
 
 12. Ordena `cran2` en orden descendente según la variable `ip_id`.
 
 ```{r}
+# Se realiza lo mismo que en el ejercicio anterior, pero especificando 
+# que se quiere de manera descendente con desc
+cran2 <- cran2 %>%
+  arrange(desc(ip_id))
 
+# Mostramos los resultados
+head(cran2)
 ```
 
 12. Ordena `cran2` según los valores de `package e ip_id`.
