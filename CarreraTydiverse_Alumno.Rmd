@@ -176,11 +176,11 @@ library(dplyr)
 
 # Seleccionamos únicamente las variables ip_id, package y country mediante una
 # tubería. Para escogerlas, usamos la función select()
-cran1 <- cran %>% 
+cranej4 <- cran %>% 
   select(ip_id, package, country)
 
 # Mostramos el resultado
-head(cran1)
+head(cranej4)
 
 ```
 
@@ -189,11 +189,11 @@ head(cran1)
 ```{r}
 # Escogemos todas las variables entre r_arch y country usando la función
 # del ejercicio anterior pero con : para indicar que es de uno al otro
-cran2 <- cran %>%
+cranej5 <- cran %>%
   select(r_arch:country)
 
 # Mostramos el resultado
-head(cran2)
+head(cranej5)
 
 ```
 
@@ -204,11 +204,11 @@ head(cran2)
 ```{r}
 # Seleccionamos todas las columnas excepto las que están entre date y size
 # usando '-'
-cran3 <- cran %>% 
+cranejj5 <- cran %>% 
   select(-date:-size)
 
 # Mostramos el resultado
-head(cran3)
+head(cranejj5)
 
 ```
 
@@ -283,7 +283,13 @@ head(cran_so_no_NA)
 10. Almacena en `cran2` todas las columnas entre `size` y `ip_id`.
 
 ```{r}
+# Almacenamos en cran2 todas las columnas entre size y ip_id con el mismo
+# método anterior
+cran2 <- cran %>%
+  select(size:ip_id)
 
+# Mostramos los resultados
+head(cran2)
 ```
 
 11. Ordena `cran2` en orden ascendente según la variable `ip_id`.
