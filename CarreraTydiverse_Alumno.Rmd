@@ -361,7 +361,11 @@ head(cran$size_mb)
     expresado en Gbytes.
 
 ```{r}
+# Lo mismo que en el anterior pero en Gb (entre 2^10)
+cran$size_gb <- cran$size/(2**10)
 
+#La mostramos
+head(cran$size_gb)
 ```
 
 17. Considera que se ha detectado un error en el sistema donde todos los
