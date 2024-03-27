@@ -295,7 +295,13 @@ head(cran2)
 11. Ordena `cran2` en orden ascendente según la variable `ip_id`.
 
 ```{r}
+# Ordenamos cran2 en orden ascendente según la variable ip_id, usando la
+# función arrange()
+cran2 <- cran2 %>%
+  arrange(ip_id) # Es ascendente por defecto
 
+# Verificar los primeros registros resultantes
+head(cran2)
 ```
 
 12. Ordena `cran2` en orden descendente según la variable `ip_id`.
