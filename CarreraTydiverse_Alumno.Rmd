@@ -175,16 +175,24 @@ necesario**
 library(dplyr)
 
 # Seleccionamos únicamente las variables ip_id, package y country mediante una
-# tubería. Para escogerlas usamos la función select()
-cran <- cran %>% 
+# tubería. Para escogerlas, usamos la función select()
+cran1 <- cran %>% 
   select(ip_id, package, country)
 
+# Mostramos el resultado
+cran1
 ```
 
 5.  Elige todas las variables entre `r_arch y country`
 
 ```{r}
+# Escogemos todas las variables entre r_arch y country usando la función
+# del ejercicio anterior pero con : para indicar que es de uno al otro
+cran2 <- cran %>%
+  select(r_arch:country)
 
+# Mostramos el resultado
+cran2
 ```
 
 5.  Puedes usar el signo (-) para no coger una columna determinada.
@@ -192,9 +200,6 @@ cran <- cran %>%
     `date y size`
 
 ```{r}
-
-
-
 
 ```
 
