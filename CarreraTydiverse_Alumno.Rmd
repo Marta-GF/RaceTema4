@@ -335,8 +335,13 @@ head(cran2)
     `ip_id, package y size` en este orden y almacénalas en `cran3`.
 
 ```{r}
+# Hacemos un subconjunto formado por las variables que se nos piden, y lo
+# almacenamos en cran3
+cran3 <- cran %>%
+  select(ip_id, package, size)
 
-
+# Lo mostramos
+head(cran3)
 ```
 
 15. Crea una nueva variable en `cran3` llamada `size_mb` que contenga el
