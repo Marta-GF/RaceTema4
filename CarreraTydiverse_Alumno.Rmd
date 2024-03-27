@@ -180,7 +180,8 @@ cran1 <- cran %>%
   select(ip_id, package, country)
 
 # Mostramos el resultado
-cran1
+head(cran1)
+
 ```
 
 5.  Elige todas las variables entre `r_arch y country`
@@ -192,7 +193,8 @@ cran2 <- cran %>%
   select(r_arch:country)
 
 # Mostramos el resultado
-cran2
+head(cran2)
+
 ```
 
 5.  Puedes usar el signo (-) para no coger una columna determinada.
@@ -206,13 +208,22 @@ cran3 <- cran %>%
   select(-date:-size)
 
 # Mostramos el resultado
-cran3
+head(cran3)
+
 ```
 
 6.  Elige aquellos registros en los que se haya descargado el paquete
     `plotly`, desde un sistema que ejecuta la versión de R 3.5.1
 
 ```{r}
+# Elegimos los registros donde se han descargado el paquete plotly desde
+# donde se ejecuta la versión de R 3.5.1. Para ello usamos la función
+# filter() y aplicamos lo que se nos dice
+cran_3_5_1 <- cran %>%
+  filter(package == "plotly", r_version == "3.5.1")
+
+# Mostramos los resultados
+cran_3_5_1
 
 ```
 
