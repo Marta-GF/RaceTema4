@@ -270,7 +270,14 @@ head(cran_100500_gnu)
     no está vacía.
 
 ```{r}
+# En este caso, para escoger los que no tengan la versión del so vacía
+# usaremos is.na() para escoger las vacías, y ! para que sean las contrarias,
+# es decir, las que no estén vacías
+cran_so_no_NA <- cran %>%
+  filter(!is.na(r_os))
 
+# Lo mostramos
+head(cran_so_no_NA)
 ```
 
 10. Almacena en `cran2` todas las columnas entre `size` y `ip_id`.
