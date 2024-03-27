@@ -421,7 +421,12 @@ by_package <- by_package %>%
     agrupamiento en el resultado.
 
 ```{r}
+# Calculamos el valor medio de la variable size como se pide
+avg_size_by_package <- by_package %>%
+  summarise(avg_size = mean(size))
 
+# Mostramos el resultado
+avg_size_by_package
 ```
 
 21. Para el agrupamiento creado calcula:
