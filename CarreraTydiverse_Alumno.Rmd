@@ -323,7 +323,12 @@ head(cran2)
     `r_version` (desdencente) e `ip_id`(ascendente).
 
 ```{r}
+# Ordenamos cran2 como se nos pide, con la misma metodología
+cran2 <- cran2 %>%
+  arrange(country, desc(r_version), ip_id) # Por defecto es ascendente
 
+# Mostramos el resultado
+head(cran2)
 ```
 
 14. Selecciona el subconjunto formado por las variables, del `cran`,
