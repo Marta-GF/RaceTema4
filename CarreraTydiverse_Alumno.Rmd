@@ -403,8 +403,17 @@ avg_bytes
     con la función `ungroup`.
 
 ```{r}
+# Creamos el agrupamiento del tibble cran según la variable package con la
+# función group_by
+by_package <- cran %>%
+  group_by(package)
 
+# Mostramos el resultado
+by_package
 
+# Para deshacer el agrupamiento usamos la función ungroup()
+by_package <- by_package %>%
+  ungroup()
 ```
 
 20. Usa la función `summarise` sobre el elemento agrupado y calcula el
