@@ -386,7 +386,12 @@ head(cran$correct_size)
     `avg_bytes`
 
 ```{r}
+# Calculamos el valor medio de lo que se nos pide, y lo almacenamos en avg_bytes
+avg_bytes <- cran %>%
+  summarise(avg_bytes = mean(size))
 
+# Vemos el valor medio resultante
+avg_bytes
 ```
 
 # Agrupamientos
