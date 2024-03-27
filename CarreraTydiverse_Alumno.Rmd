@@ -453,7 +453,7 @@ pack_sum <- by_package %>%
     med_bytes = stats::median(size)  # Mediana del tamaño
   )
 
-# Ver el resultado del sumario
+# Vemos el resultado del sumario
 pack_sum
 ```
 
@@ -466,12 +466,17 @@ pack_sum
     elemento `cran`, usando *pipes***.
 
 ```{r}
+# Calculamos las descargas totales para cada paquete
+top_counts <- cran %>%
+  group_by(package) %>%
+  summarise(total_downloads = n()) %>%
+  arrange(desc(total_downloads)) %>%
+  ungroup() %>%
+  filter(row_number() <= n() * 0.01) %>%
+  pull(package)
 
-
-
-
-
-
+# Vemos los paquetes más descargados
+top_counts
 ```
 
 23. Repite el apartado anterior utilizando **pipes** para que finalmente
