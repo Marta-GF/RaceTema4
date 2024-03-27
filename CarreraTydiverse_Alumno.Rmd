@@ -200,7 +200,13 @@ cran2
     `date y size`
 
 ```{r}
+# Seleccionamos todas las columnas excepto las que están entre date y size
+# usando '-'
+cran3 <- cran %>% 
+  select(-date:-size)
 
+# Mostramos el resultado
+cran3
 ```
 
 6.  Elige aquellos registros en los que se haya descargado el paquete
