@@ -484,15 +484,19 @@ top_counts
     descargas (`count`) y se almacene el la variable `top_counts_sorted`
 
 ```{r}
+# En el ejericicio anterior ya está realizado con pipes (tuberías), por
+# lo que sólo habría que ordenarlo en orden descendente
+top_counts_sorted <- cran %>%
+  group_by(package) %>%
+  summarise(total_downloads = n()) %>%
+  arrange(desc(total_downloads)) %>%
+  ungroup() %>%
+  filter(row_number() <= n() * 0.01) %>%
+  arrange(desc(total_downloads)) %>%
+  pull(package)
 
-
-
-
-
-
-
-
-
+# Muestra los paquetes más descargados, ordenados por el número de descargas
+top_counts_sorted
 ```
 
 24. En lugar de utilizar el recuento de descargas, es más lógico
