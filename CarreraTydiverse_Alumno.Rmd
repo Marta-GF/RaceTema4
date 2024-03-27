@@ -374,7 +374,11 @@ head(cran$size_gb)
     valor correcto.
 
 ```{r}
+# Lo hacemos con el mismo método, sumamos 1000 bytes
+cran$correct_size <- cran$size + 1000
 
+#La mostramos
+head(cran$correct_size)
 ```
 
 18. Usa `summarise` para determinar el valor medio del tamaño de las
