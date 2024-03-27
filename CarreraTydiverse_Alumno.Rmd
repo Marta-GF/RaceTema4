@@ -154,7 +154,11 @@ rm(mydf)
     resultado.
 
 ```{r}
+# Escribimos 'cran' directamente para visualizar los datos
+cran
 
+# Observamos 'cran' utilizando la función glimpse
+glimpse(cran)
 
 ```
 
