@@ -223,7 +223,7 @@ cran_3_5_1 <- cran %>%
   filter(package == "plotly", r_version == "3.5.1")
 
 # Mostramos los resultados
-cran_3_5_1
+cran_3_5_1 # (no hace falta head porque solo hay un registro)
 
 ```
 
@@ -231,6 +231,13 @@ cran_3_5_1
     de R superiores a la 3.4.0
 
 ```{r}
+# En este caso, usamos la misma metodología del ejercicio anterior, pero
+# aplicando los requisitos que se nos dicen
+cran_3_4_0 <- cran %>%
+  filter(country == "ES", r_version > "3.4.0")
+
+# Mostramos los resultados
+head(cran_3_4_0)
 
 ```
 
