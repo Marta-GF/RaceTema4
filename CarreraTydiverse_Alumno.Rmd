@@ -423,7 +423,7 @@ by_package <- by_package %>%
 ```{r}
 # Calculamos el valor medio de la variable size como se pide
 avg_size_by_package <- by_package %>%
-  summarise(avg_size = mean(size))
+  summarise(avg_size_by_package = mean(size))
 
 # Mostramos el resultado
 avg_size_by_package
@@ -443,32 +443,18 @@ de la variable `size` y almacénalos en las variables
 sumario se almacenará en `pack_sum`.
 
 ```{r}
+# Calculamos las métricas solicitadas en el enunciado
+pack_sum <- by_package %>%
+  summarise(
+    count = n(),                     # Número de elementos
+    unique = n_distinct(ip_id),      # Número de elementos distintos de ip_id
+    countries = n_distinct(country), # Número de países distintos
+    avg_bytes = mean(size),          # Media del tamaño
+    med_bytes = stats::median(size)  # Mediana del tamaño
+  )
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# Ver el resultado del sumario
+pack_sum
 ```
 
 22. Muestra el 1% de los paquetes que han sido más descargados. Para
